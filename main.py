@@ -11,12 +11,15 @@ GPIO.cleanup()
 # read data using pin 14
 instance = dht11.DHT11(pin=14)
 
+# now (unix-time)
+timestamp = int(time.mktime(datetime.datetime.utcnow().timetuple()))
+
 result = instance.read()
 print("{")
-print("  \"timeStamp\": \"%s\"", datetime.datetime.utcnow())
+print("  \"timeStamp\": %d," timestamp)
 
 if result.is_valid():
-    print("  \"temperature\": %d" % result.temperature)
+    print("  \"temperature\": %d," % result.temperature)
     print("  \"humidity\": %d" % result.humidity)
 else:
     print(" \"error\": %d" % result.error_code)
