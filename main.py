@@ -12,7 +12,7 @@ GPIO.cleanup()
 instance = dht11.DHT11(pin=14)
 
 # now (unix-time)
-timestamp = int(time.mktime(datetime.datetime.utcnow().timetuple()))
+timestamp = int(time.mktime(datetime.datetime.now().timetuple()))
 
 result = instance.read()
 print("{")
