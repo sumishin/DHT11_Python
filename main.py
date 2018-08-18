@@ -16,7 +16,7 @@ timestamp = int(time.mktime(datetime.datetime.utcnow().timetuple()))
 
 result = instance.read()
 print("{")
-print("  \"timeStamp\": %d," timestamp)
+print("  \"timeStamp\": %d," % timestamp)
 
 if result.is_valid():
     print("  \"temperature\": %d," % result.temperature)
