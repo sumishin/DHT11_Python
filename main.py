@@ -12,11 +12,13 @@ GPIO.cleanup()
 instance = dht11.DHT11(pin=14)
 
 # now (unix-time)
-timestamp = int(time.mktime(datetime.datetime.now().timetuple()))
+now = datetime.datetime.now()
+month = now.strftime("%Y%m")
+timestamp = int(time.mktime(now.timetuple()))
 
 result = instance.read()
 print("{")
-print("  \"deviceName\": \"myRaspberryPi3\",")
+print("  \"deviceName\": \"myRaspberryPi3_%s\"," % month)
 print("  \"timeStamp\": %d," % timestamp)
 
 if result.is_valid():
