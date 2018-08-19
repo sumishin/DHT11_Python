@@ -16,6 +16,7 @@ timestamp = int(time.mktime(datetime.datetime.now().timetuple()))
 
 result = instance.read()
 print("{")
+print("  \"deviceName\": \"myRaspberryPi3\",")
 print("  \"timeStamp\": %d," % timestamp)
 
 if result.is_valid():
