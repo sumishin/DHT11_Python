@@ -45,6 +45,7 @@ def task_with_retry():
         result = recodeDht11Data()
         if result == True:
             return True
+    return False
 
 result = recode_dht11_data()
 if result != True:
