@@ -46,11 +46,11 @@ def recode_retry_over_error():
 
 def task_with_retry():
     for i in range(1, CONNECTION_RETRY + 1):
-        result = recodeDht11Data()
+        result = recode_dht11_data()
         if result == True:
             return True
     return False
 
-result = recode_dht11_data()
+result = task_with_retry()
 if result != True:
     recode_retry_over_error()
