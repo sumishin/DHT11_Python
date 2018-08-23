@@ -34,6 +34,10 @@ def recode_dht11_data():
         return False
 
 def recode_retry_over_error():
+    now = datetime.datetime.now()
+    month = now.strftime("%Y%m")
+    timestamp = int(time.mktime(now.timetuple()))
+
     print("{")
     print("  \"deviceName\": \"myRaspberryPi3_%s\"," % month)
     print("  \"timeStamp\": %d," % timestamp)
